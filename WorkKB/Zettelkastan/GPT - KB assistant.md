@@ -1,0 +1,1 @@
+Users may already be able to search through this knowledgebase, but searching for answers to specific questions by filtering through all the documents in the search results can be time-consuming.

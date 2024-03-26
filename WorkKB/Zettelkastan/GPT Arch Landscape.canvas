@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"fd7e4175f15d087e","type":"text","text":"GPT Model (via Azure Private Link)","x":-360,"y":120,"width":250,"height":58},
+		{"id":"f54115194dea50ce","type":"text","text":"Cognitive Search","x":-360,"y":-360,"width":250,"height":60},
+		{"id":"c16c3fa0a5eaae11","type":"text","text":"Storage\nIndex + Cache","x":140,"y":-182,"width":250,"height":60},
+		{"id":"19a4d4e97f73e012","type":"text","text":"Semantic Kernel","x":-420,"y":-182,"width":250,"height":60},
+		{"id":"26ee4570f4cb6abe","type":"text","text":"HuggingFace (NLP)","x":-360,"y":-122,"width":250,"height":60},
+		{"id":"22073bc7c2ac111c","type":"text","text":"Azure OpenAI","x":-360,"y":-62,"width":250,"height":60},
+		{"id":"cf14d8a4d5789bdc","type":"text","text":"MS Graph","x":100,"y":-360,"width":250,"height":60},
+		{"id":"b755574d13ec3958","x":-295,"y":-460,"width":250,"height":100,"type":"text","text":"RAG \n\nhttps://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview"}
+	],
+	"edges":[
+		{"id":"9ce0de43dfadf6f5","fromNode":"22073bc7c2ac111c","fromSide":"bottom","toNode":"fd7e4175f15d087e","toSide":"top","label":"Microsoft backbone"},
+		{"id":"72c0f7dbbe374045","fromNode":"cf14d8a4d5789bdc","fromSide":"left","toNode":"f54115194dea50ce","toSide":"right","label":"Auth"},
+		{"id":"d647d002db28ed78","fromNode":"f54115194dea50ce","fromSide":"bottom","toNode":"c16c3fa0a5eaae11","toSide":"top"},
+		{"id":"d23fc9b50580138f","fromNode":"22073bc7c2ac111c","fromSide":"bottom","toNode":"c16c3fa0a5eaae11","toSide":"bottom"},
+		{"id":"3b23e04763c4b605","fromNode":"f54115194dea50ce","fromSide":"bottom","toNode":"19a4d4e97f73e012","toSide":"top"}
+	]
+}

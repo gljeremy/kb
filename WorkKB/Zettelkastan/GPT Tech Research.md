@@ -1,0 +1,1 @@
+Semantic Kernel - Semantic Kernel is at the center of the agent stack, acting as an AI orchestration layer that combines AI models and plugins to create new experiences for users. Semantic Kernel is an open-source Software Development Kit (SDK) that allows you to build AI agents that can call your existing code
