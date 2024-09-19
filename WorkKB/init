@@ -1,0 +1,84 @@
+
+write-host "Welcome to the EmbarkContent-Services initialization process"
+write-host "This process cannot be completed unattended, so please be ready to answer some questions along the way."
+Start-Sleep -Seconds 2
+
+write-host ""
+
+$installDocker = Read-Host -Prompt "Do you need to install Docker Desktop? (enter 'y' for yes)"
+
+if ($installDocker.ToLower() -eq 'y') {
+    write-host "opening a browser window to download Docker Desktop"
+    write-host "after installing Docker Desktop, please return to this window"
+    Start-Sleep -Seconds 2
+    Start-Process "microsoft-edge:https://www.docker.com/products/docker-desktop/"
+}
+
+write-host ""
+
+$netSDK = Read-Host -Prompt "Do you need to install .NET SDK? (enter 'y' for yes)"
+
+if ($netSDK.ToLower() -eq 'y') {
+    write-host "opening a browser window to download .NET SDK"
+    write-host "after installing Docker Desktop, please return to this window"
+    Start-Sleep -Seconds 2
+    Start-Process "microsoft-edge:https://dotnet.microsoft.com/en-us/download/dotnet"
+}
+write-host ""
+
+$installGit = Read-Host -Prompt "Do you need to install Git for Windows? (enter 'y' for yes)"
+
+if ($installGit.ToLower() -eq 'y') {
+    write-host "opening a browser window to download Git for Windows"
+    write-host "after installing Git for Windows, please return to this window"
+    Start-Sleep -Seconds 2
+    Start-Process "microsoft-edge:https://gitforwindows.org/"
+}
+
+write-host ""
+
+$installVSCode = Read-Host -Prompt "Do you need to install VSCode? (enter 'y' for yes)"
+
+if ($installVSCode.ToLower() -eq 'y') {
+    write-host "opening a browser window to download VSCode"
+    write-host "after installing VSCode, please return to this window"
+    Start-Sleep -Seconds 2
+    Start-Process "microsoft-edge:https://code.visualstudio.com/"
+}
+
+write-host ""
+
+$installSecrets = Read-Host -Prompt "Will you run SearchablePages? (enter 'y' for yes)"
+
+if ($installSecrets.ToLower() -eq 'y') {
+    .\src\SearchablePages\secrets.ps1
+    cd $PSScriptRoot
+}
+
+write-host "We are now ready to initialize your environment"
+write-host ""
+Start-Sleep -Seconds 2
+write-host "Please confirm have installed Docker Desktop, Git for Windows, and VSCode"
+
+$proceed = Read-Host -Prompt "Enter 'y' to confirm or 'n' to exit and run this script again when you are ready"
+
+if ($proceed.ToLower() -eq 'y') {
+    .\pipelines\local\init.ps1
+
+    cd $PSScriptRoot
+
+    write-host ""
+    write-host "environment initialized"
+    write-host ""
+    Start-Sleep -Seconds 2
+    write-host "Run 'minikube dashboard' to view the minikube dashboard"
+    write-host ""
+    write-host "To begin running a tilt workload, run the appropriate tiltup-compact script at the root of the repo"
+    write-host ""
+    write-host "Note: if https://embarkdev.traefik.me/whoami in your browser is showing error connect to VPN and refresh"
+    write-host ""
+}
+
+
+
+
